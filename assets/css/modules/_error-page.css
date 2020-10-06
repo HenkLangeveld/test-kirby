@@ -1,0 +1,49 @@
+.error-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: $lightColor;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
+.error-image {
+  position: relative;
+  width: 80vw;
+  margin: auto;
+
+  @mixin atSmall {
+    width: 400px;
+  }
+}
+
+.error-heading {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 4rem;
+  padding: 0;
+  margin: 0;
+}
+
+.error-message {
+  text-align: center;
+  padding-top: 1rem;
+
+  @mixin atSmall {
+    font-size: 1.2rem;
+  }
+}
+
+.error__home-link {
+  background-color: $primaryColor;
+  color: #fff;
+  justify-self: center;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  margin-top: 1.5rem;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);
+}

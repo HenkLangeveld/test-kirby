@@ -1,0 +1,19 @@
+title: Artikel
+
+columns:
+  left:
+    width: 2/3
+    fields:
+      heading:
+        label: Titel
+        type: text
+      text:
+        label: Text
+        type: textarea
+        size: large
+  right:
+    width: 1/3
+    sections:
+      gallery:
+        label: photo
+        type: files

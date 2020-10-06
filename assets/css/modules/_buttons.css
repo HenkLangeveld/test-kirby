@@ -1,0 +1,91 @@
+button {
+  background-color: $primaryColor;
+  border: 1px solid $primaryColor;
+  color: #fff;
+  padding: 0 0.8rem;
+  cursor: pointer;
+}
+
+.button {
+  &--back {
+    padding: 0.5rem 1rem;
+
+    @mixin atSmall {
+      margin-left: 1.5rem;
+    }
+  }
+
+  &--pagination {
+    position: absolute;
+    font-size: 0.7rem;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+
+    @mixin atSmall {
+      font-size: 0.8rem;
+    }
+
+    &-previous {
+      left: 0;
+      top: 0;
+    }
+
+    &-next {
+      right: 0;
+      top: 0;
+    }
+  }
+}
+
+.cook-mode__button {
+  display: inline-block;
+  width: 4em;
+  height: 2.5em;
+  text-align: center;
+  border: 2px solid $primaryColor;
+  padding: 0.2rem 0.5rem;
+  color: #fff;
+  cursor: pointer;
+
+  &--on {
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+    background-color: #ccc;
+
+    &-is-active {
+      background-color: green;
+    }
+  }
+
+  &--off {
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: red;
+
+    &-is-active {
+      background-color: #ccc;
+    }
+  }
+}
+
+.search {
+  grid-column: -2;
+  width: 100%;
+  max-width: 450px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+
+  &__input-field {
+    padding: 0.5rem 1rem;
+    border: 1px solid grey;
+    background-color: #f1f1f1;
+  }
+
+  &__submit-button {
+    padding: 0.5rem 1rem;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+  }
+}

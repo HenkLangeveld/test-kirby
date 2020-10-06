@@ -1,0 +1,54 @@
+.basic-article {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @mixin atMedium {
+    grid-template-columns: 1fr 280px;
+  }
+
+  &__content {
+    padding-top: 3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    @mixin atMedium {
+      padding-right: 2rem;
+      padding-left: 0;
+    }
+
+    &-pagination {
+      position: relative;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__images {
+    display: none;
+
+    @mixin atMedium {
+      padding-top: 3rem;
+      display: block;
+    }
+  }
+}
+
+.section-writing {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.article {
+  display: flex;
+  margin-bottom: 2rem;
+
+  &__thumbnail {
+    width: 90px;
+    height: 90px;
+  }
+  &__title {
+    margin-left: 2rem;
+  }
+}

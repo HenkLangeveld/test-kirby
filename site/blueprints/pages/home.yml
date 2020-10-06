@@ -1,0 +1,9 @@
+title: Default Page
+preset: page
+fields:
+  headline:
+    label: Text Titel
+    type: text
+  text:
+    label: Text
+    type: textarea

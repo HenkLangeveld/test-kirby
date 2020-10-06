@@ -1,0 +1,30 @@
+.pepper {
+  width: 250px;
+  height: auto;
+  margin: auto;
+  overflow: hidden;
+
+  &--1 {
+    margin-bottom: 1.5rem;
+
+    @mixin atSmall {
+      margin: auto;
+    }
+
+    @mixin atLarge {
+      width: 30vw;
+    }
+  }
+
+  &--2 {
+    margin-top: 1rem;
+  }
+
+  &--3 {
+    margin-top: -3rem;
+    margin-bottom: 1.5rem;
+    @mixin atSmall {
+      width: 100%;
+    }
+  }
+}

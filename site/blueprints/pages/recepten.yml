@@ -1,0 +1,10 @@
+title: Recepten
+
+sections:
+  recepten:
+    help: Gebruik de RECEPT template bij nieuwe recepten
+    type: pages
+    layout: cards
+    image:
+      cover: true
+      ratio: 1/1

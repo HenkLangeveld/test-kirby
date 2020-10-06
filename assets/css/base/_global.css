@@ -1,0 +1,44 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: currentColor;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+ol {
+  padding-left: 1rem;
+}
+
+html {
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.7;
+  color: #333;
+}
+
+main {
+  min-height: calc(100vh - 8.125rem);
+  background-color: $lightColor;
+  padding-bottom: 2rem;
+
+  @mixin atMedium {
+    padding-bottom: 3rem;
+  }
+}

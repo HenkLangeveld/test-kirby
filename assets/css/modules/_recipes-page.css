@@ -1,0 +1,54 @@
+.recipes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  grid-gap: 0.5rem;
+  justify-content: center;
+  align-content: space-between;
+  list-style: none;
+  padding: 0.5rem 0 2rem 0;
+  margin: auto;
+
+  @mixin atSmall {
+    padding: 0.5rem 10px 2rem 10px;
+    grid-gap: 1.5rem;
+  }
+
+  @mixin atMedium {
+    padding: 0 0 2rem 0;
+    margin: 0;
+  }
+}
+
+.recipe {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  background-color: #666;
+  overflow: hidden;
+
+  &:hover &__image {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  &__info {
+    padding: 1rem;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    align-items: end;
+    text-shadow: $primaryTextShadow;
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    transform: scale(1.1);
+    transition: all 300ms ease-out;
+  }
+}

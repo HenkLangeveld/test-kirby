@@ -1,0 +1,72 @@
+.heading {
+  position: relative;
+  z-index: 10;
+  font-family: "Abril Fatface", sans-serif;
+  padding: 0.7em 0 0.5em 0;
+
+  &--in-photo {
+    position: absolute;
+    font-size: 1.2rem;
+    bottom: 1rem;
+  }
+
+  &--white {
+    color: #fff;
+    text-shadow: $primaryTextShadow;
+  }
+
+  &__logo {
+    text-align: center;
+    text-shadow: $primaryTextShadow;
+    padding-top: 0.5em;
+    padding-bottom: 0;
+    display: inline-block;
+
+    &--small {
+      @mixin atMedium {
+        margin-left: 1rem;
+        padding-top: 0;
+      }
+    }
+  }
+}
+
+.heading--main {
+  font-size: 2.5rem;
+  text-align: center;
+  letter-spacing: 1px;
+  padding-top: 5rem;
+  padding-bottom: 0.5rem;
+  line-height: 1.2;
+
+  @mixin atMedium {
+    font-size: 3rem;
+    padding-top: 0.7em;
+    padding-bottom: 0.5em;
+    line-height: 1.7;
+  }
+
+  &-banner {
+    padding-top: 4rem;
+
+    @mixin atMedium {
+      padding: 0;
+    }
+  }
+}
+
+.heading--recipe-name {
+  font-size: 1.4rem;
+  line-height: 1.2em;
+  padding: 0 0 0.5em 0;
+  text-align: left;
+}
+
+.sub-heading {
+  font-size: 1.4rem;
+}
+
+.time--in-photo {
+  position: absolute;
+  bottom: 0.5rem;
+}

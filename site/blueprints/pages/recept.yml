@@ -1,0 +1,75 @@
+title: Recept
+
+columns:
+  left:
+    width: 1/3
+    fields:
+      gallery:
+        label: Foto
+        type: files
+        layout: cards
+        image:
+          cover: true
+          ratio: 1/1
+      time:
+        width: 1/2
+        label: Bereidingstijd
+        type: number
+        after: min.
+      serves:
+        width: 1/2
+        label: Aantal personen
+        type: number
+      placement:
+        label: plek voor peper tekening
+        type: radio
+        default: 3
+        help: '1' is naast beschrijving, '2' is onder ingredienten, '3' is boven bereiding
+        options:
+          - 1
+          - 2
+          - 3
+      ingredients:
+        label: Ingrediënten
+        type: textarea
+  right:
+    width: 2/3
+    sections:
+      content:
+        type: fields
+        fields:
+          heading:
+            label: Titel
+            type: text
+          description:
+            label: Beschrijving
+            type: textarea
+          dish:
+            label: Soort gerecht
+            type: radio
+            default: Hoofd gerecht
+            options:
+              voorgerecht: Voorgerecht
+              hoofdgerecht: Hoofdgerecht
+              nagerecht: Nagerecht
+              bijgerecht: Bijgerecht
+              overig: Overig
+
+          categories:
+            label: Categorie
+            type: multiselect
+            min: 0
+            max: 6
+            options:
+              vlees: Vlees
+              vis: Vis
+              vega: Vega
+              zoet: Zoet
+              pittig: Pittig
+              mexicaans: Mexicaans
+              spaans: Spaans
+              mediteraans: Mediteraans
+              aziatisch: Aziatisch
+          instructions:
+            label: Bereiding
+            type: textarea

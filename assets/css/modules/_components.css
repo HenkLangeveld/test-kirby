@@ -1,0 +1,132 @@
+img {
+  width: 100%;
+  height: auto;
+}
+
+.main-wrapper {
+  max-width: 1200px;
+  margin: auto;
+  height: inherit;
+}
+
+.verticle-center-wrapper {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
+.section-padding {
+  @mixin atMedium {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+.icon-wrapper {
+  width: auto;
+}
+
+.grey-text {
+  color: #ccc;
+}
+
+.banner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 220px;
+  background-color: black;
+  overflow: hidden;
+
+  &-content {
+    padding: 2rem 3rem;
+    height: inherit;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+    grid-gap: 0;
+
+    @mixin atMedium {
+      grid-template-columns: 2fr 5fr;
+      grid-gap: 1.5rem;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    left: 0;
+    width: inherit;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.5;
+
+    &--recipe {
+      opacity: 0.4;
+    }
+  }
+
+  &__insert {
+    position: relative;
+    z-index: 2;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: none;
+
+    &--about {
+      @mixin atSmall {
+        position: absolute;
+        left: 1rem;
+        top: 1rem;
+        display: block;
+      }
+
+      @mixin atMedium {
+        position: relative;
+        top: 0;
+      }
+    }
+
+    &--recipe {
+      width: 200px;
+      height: 200px;
+      border-radius: 0;
+
+      @mixin atMedium {
+        display: block;
+      }
+    }
+  }
+
+  &__text {
+    position: relative;
+    z-index: 2;
+
+    @mixin atMedium {
+    }
+  }
+
+  &__tags {
+    position: relative;
+    z-index: 2;
+    padding-left: 1rem;
+  }
+
+  .text-shadow {
+    text-shadow: $primaryTextShadow;
+  }
+
+  &--recipe {
+    height: 350px;
+
+    &-info {
+      position: relative;
+      z-index: 2;
+      color: #fff;
+      justify-self: end;
+      align-self: end;
+    }
+  }
+}

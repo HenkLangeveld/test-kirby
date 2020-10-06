@@ -1,0 +1,279 @@
+.header {
+  background-color: $primaryColor;
+  color: #fff;
+  width: 100%;
+  height: 4.375rem;
+
+  &-content {
+    position: relative;
+    height: inherit;
+
+    @mixin atMedium {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}
+
+.active {
+  background-color: $secondaryColor;
+}
+
+.logo {
+  position: relative;
+  z-index: 13;
+  width: 160px;
+  height: 140px;
+  background-color: $secondaryColor;
+  margin: auto;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-gap: 0.5rem;
+
+  @mixin atMedium {
+    margin-left: 6rem;
+  }
+
+  &--small {
+    @mixin atMedium {
+      height: 120%;
+      width: 200px;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__image {
+    width: 80%;
+    margin: auto;
+
+    &--small {
+      @mixin atMedium {
+        width: 30%;
+        margin: auto 0;
+      }
+    }
+  }
+}
+
+.header-content {
+  height: 100%;
+}
+
+.main-menu {
+  position: absolute;
+  min-width: 300px;
+  top: 100%;
+  width: 100%;
+  z-index: 11;
+  background-color: $primaryColor;
+  padding-top: 80px;
+  padding-bottom: 0.5rem;
+  line-height: 2.5;
+  transform: scaleY(0);
+  transform-origin: top;
+  translate: transform 300ms;
+
+  @mixin atMedium {
+    position: relative;
+    top: 0%;
+    width: auto;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 3rem;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.2rem;
+    height: 100%;
+    transform: scaleY(1);
+  }
+
+  &--is-visible {
+    transform: scaleY(1);
+  }
+}
+
+.sub-menu {
+  width: 100%;
+  left: 0;
+  top: 4rem;
+  background-color: $secondaryColor;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 1.5rem;
+  display: none;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 300ms;
+
+  &-container {
+    z-index: 11;
+    background-color: $secondaryColor;
+    width: 100%;
+    left: 0;
+    top: 4rem;
+    display: flex;
+    padding: 1rem 0;
+    display: none;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 300ms;
+
+    @mixin atMedium {
+      position: absolute;
+    }
+  }
+
+  &--schrijfsels {
+    z-index: 11;
+
+    @mixin atMedium {
+      position: absolute;
+    }
+  }
+
+  &--dish,
+  &--categories {
+    width: 50%;
+    padding-top: 0;
+  }
+
+  &--categories {
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  &__title {
+    background-color: $primaryColor;
+    font-size: 1rem;
+    color: $lightColor;
+    text-align: center;
+    padding: 0.5em 0;
+  }
+
+  &__item {
+    font-size: 1rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  &__item:last-child {
+    border-bottom: none;
+  }
+
+  &__item a {
+    border-bottom: 1px solid $secondaryColor;
+    transition: border-bottom-color 300ms;
+  }
+
+  &__item a:hover {
+    border-bottom: 1px solid #fff;
+  }
+}
+
+.main-menu__item {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: border-color 300ms;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  @mixin atMedium {
+    &:hover {
+      background-color: $secondaryColor;
+    }
+    &:hover .sub-menu-container {
+      transform: scaleY(1);
+      display: flex;
+    }
+
+    &:hover .sub-menu {
+      transform: scaleY(1);
+      display: block;
+    }
+  }
+}
+
+.show-recipe-submenu-container {
+  transform: scaleY(1);
+  display: flex;
+}
+
+.show-submenu {
+  transform: scaleY(1);
+  display: block;
+}
+
+.expand-recipe-icon,
+.expand-writings-icon {
+  position: absolute;
+  right: 1rem;
+  padding: 0.75rem;
+
+  @mixin atMedium {
+    position: relative;
+    right: 0;
+    padding: 0;
+  }
+}
+
+.mobile-menu-icon {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+
+  @mixin atMedium {
+    display: none;
+  }
+
+  &::before,
+  &::after,
+  &__bars {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    background-color: #fff;
+    border-radius: 3px;
+    transition: all 300ms ease-out;
+    transform-origin: 0 50%;
+  }
+
+  &::before {
+    content: "";
+    top: 5%;
+    height: 15%;
+    transform-origin: 0 0;
+  }
+
+  &::after {
+    content: "";
+    top: 80%;
+    height: 15%;
+    transform-origin: 0 100%;
+  }
+
+  &--close-x {
+    &::before {
+      transform: rotate(45deg) scaleX(1.15);
+    }
+    &::after {
+      transform: rotate(-45deg) scaleX(1.15);
+    }
+    .mobile-menu-icon__bars {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+  }
+}

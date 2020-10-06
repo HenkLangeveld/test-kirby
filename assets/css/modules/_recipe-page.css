@@ -1,0 +1,73 @@
+.information {
+}
+.information__foto-info {
+  text-align: center;
+}
+.information__foto-text {
+  margin-left: 1em;
+}
+
+.topline {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cook-mode {
+  display: flex;
+  flex-direction: row;
+  text-align: right;
+
+  &__title {
+    margin-right: 0.5rem;
+  }
+}
+
+.information__text {
+  padding: 1rem;
+  font-size: 0.9rem;
+
+  @mixin atSmall {
+    display: grid;
+    grid-template-columns: 1fr auto;
+  }
+}
+.information__description {
+  padding: 1rem 0;
+}
+.information__tags {
+  background-color: $primaryColor;
+  color: white;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin-right: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.instructions {
+  display: grid;
+  grid-template-columns: 1tf;
+  grid-gap: 2rem;
+
+  @mixin atSmall {
+    grid-template-columns: 2fr 5fr;
+  }
+
+  p {
+    margin-top: 1rem;
+  }
+}
+.instructions__text {
+  padding: 1rem;
+  font-size: 1.2rem;
+}
+
+.ingredients {
+  padding: 1rem;
+  display: grid;
+  align-content: start;
+
+  @mixin atSmall {
+    padding: 1rem 1rem 1rem 2.5rem;
+    justify-content: center;
+  }
+}
